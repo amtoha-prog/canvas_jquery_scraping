@@ -1,9 +1,12 @@
 const fs = require('fs');
 const {JSDOM} = require('jsdom');
 
-// Created a fake browser window for jquery
+// Reading the saved Canvas page
 const html = fs.readFileSync('canvas.html', 'utf-8');
-const window = canvas.window;
+
+// Created a fake browser window for jquery
+const dom = new JSDOM(html);
+const window = dom.window;
 const $ = requrie('jquery')(window);
 
 function scrapeData() {
