@@ -7,7 +7,7 @@ const html = fs.readFileSync('canvas.html', 'utf-8');
 // Created a fake browser window for jquery
 const dom = new JSDOM(html);
 const window = dom.window;
-const $ = requrie('jquery')(window);
+const $ = require('jquery')(window);
 
 function scrapeData() {
   // Finding the assingments
