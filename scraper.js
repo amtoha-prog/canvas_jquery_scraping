@@ -28,7 +28,16 @@ function scrapeData() {
     }
 
     // Getting the status 
-    var status = row.find('js-score .screenreader-only').first().text().trim();
+    var status = row.find('.scroe-display').attr('title');
+
+    if (status === 'No Submission') {
+      status = 'Not Submitted'; }
+      else if (status) {
+      status = 'Submitted'; }
+      else {
+        status = 'Unknown';
+      }
+    }
     
 
    // Printing the assignments results
