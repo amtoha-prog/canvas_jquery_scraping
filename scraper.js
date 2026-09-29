@@ -23,6 +23,10 @@ function scrapeData() {
     // Getting the due date
     var dueDate = row.find('.assignment-date-due time').attr('title');
 
+    if (!dueDate) {
+      dueDate = 'No due date';
+    }
+
     // Getting the status 
     var status = row.find('js-score .screenreader-only').first().text().trim();
     
