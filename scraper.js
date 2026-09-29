@@ -2,7 +2,7 @@ const fs = require('fs');
 const {JSDOM} = require('jsdom');
 
 // Created a fake browser window for jquery
-const html = fs.readFileSync('dom.html', 'utf-8');
+const html = fs.readFileSync('canvas.html', 'utf-8');
 const window = canvas.window;
 const $ = requrie('jquery')(window);
 
