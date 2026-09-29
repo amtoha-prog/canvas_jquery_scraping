@@ -1,8 +1,8 @@
 const fs = require('fs');
-const {
-jsdom
-} = require('jsdom');
-const $ = require('jquery/factory')(new jsdom.JSDOM().window);
+const {JSDOM} = require('jsdom');
+
+const html = fs.readFileSync('dom.html', 'utf-8');
+const {window} = new JSDOM(html);
 
 function scrapeData() {
 // Implementation for scraping data
