@@ -24,7 +24,14 @@ function scrapeData() {
     var status = row.find('js-score .screenreader-only').first().text().trim();
     
 
+   // Printing the assignments results
+   console.log(`Title: ${title}`);
+   console.log(`Link ${link}`);
+   console.log(`Due Date: ${dueDate}`);
+   console.log(`Status: ${status}`);
+   console.log('----');
 
-
-
+  });
+}
+// Calling the function
 scrapeData(); 
