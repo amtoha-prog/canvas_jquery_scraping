@@ -16,8 +16,15 @@ function scrapeData() {
     // Getting the title and link of the assignment
     var title = row.find('.ig-title').text();
     var link = row.find('.ig-title').attr('href');
-    console.log(Title: ${title}, Link: ${link});
-  });
+    
+    // Getting the due date
+    var dueDate = row.find('.assignment-date-due time').attr('title');
+
+    // Getting the status 
+    var status = row.find('js-score .screenreader-only').first().text().trim();
+    
+
+
 
 
 scrapeData(); 
