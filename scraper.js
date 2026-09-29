@@ -17,7 +17,7 @@ function scrapeData() {
   rows.each(function() {
     var row = $(this);
     // Getting the title and link of the assignment
-    var title = row.find('.ig-title').text();
+    var title = row.find('.ig-title').text().trim();
     var link = row.find('.ig-title').attr('href');
     
     // Getting the due date
@@ -28,21 +28,21 @@ function scrapeData() {
     }
 
     // Getting the status 
-    var status = row.find('.scroe-display').attr('title');
-
+    var status = row.find('.score-display').attr('title');
+    
     if (status === 'No Submission') {
       status = 'Not Submitted'; }
       else if (status) {
       status = 'Submitted'; }
       else {
-        status = 'Unknown';
-      }
+      status = 'Unknown';
+    }
 
     
 
    // Printing the assignments results
    console.log(`Title: ${title}`);
-   console.log(`Link ${link}`);
+   console.log(`Link: ${link}`);
    console.log(`Due Date: ${dueDate}`);
    console.log(`Status: ${status}`);
    console.log('----');
