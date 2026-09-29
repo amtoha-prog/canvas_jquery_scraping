@@ -1,19 +1,23 @@
 const fs = require('fs');
 const {JSDOM} = require('jsdom');
 
+// Created a fake browser window for jquery
 const html = fs.readFileSync('dom.html', 'utf-8');
-const {window} = new JSDOM(html);
+const window = canvas.window;
+const $ = requrie('jquery')(window);
 
 function scrapeData() {
-// Implementation for scraping data
-const dom = fs.readFileSync('dom.html', 'utf-8');
-const children = $(dom).children(".ig-title").all();
+  // Finding the assingments
+  var rows = $('.ig-row');
 
-for (const child of children) {
-const title = child.text();
-const link = child.attr("href");
-console.log(Title: ${title}, Link: ${link});
-}
-}
+  // Looping through each row
+  rows.each(function() {
+    var row = $(this);
+    // Getting the title and link of the assignment
+    var title = row.find('.ig-title').text();
+    var link = row.find('.ig-title').attr('href');
+    console.log(Title: ${title}, Link: ${link});
+  });
+
 
 scrapeData(); 
