@@ -37,7 +37,7 @@ function scrapeData() {
       else {
         status = 'Unknown';
       }
-    }
+
     
 
    // Printing the assignments results
