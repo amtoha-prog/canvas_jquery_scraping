@@ -11,24 +11,24 @@ const $ = require('jquery')(window);
 
 function scrapeData() {
   // Finding the assingments
-  var rows = $('.ig-row');
+  const rows = $('.ig-row');
 
   // Looping through each row
   rows.each(function() {
-    var row = $(this);
+    const row = $(this);
     // Getting the title and link of the assignment
-    var title = row.find('.ig-title').text().trim();
-    var link = row.find('.ig-title').attr('href');
+    const title = row.find('.ig-title').text().trim();
+    const link = row.find('.ig-title').attr('href');
     
     // Getting the due date
-    var dueDate = row.find('.assignment-date-due time').attr('title');
+    let dueDate = row.find('.assignment-date-due time').attr('title');
 
     if (!dueDate) {
       dueDate = 'No due date';
     }
 
     // Getting the status 
-    var status = row.find('.score-display').attr('title');
+     let status = row.find('.score-display').attr('title');
     
     if (status === 'No Submission') {
       status = 'Not Submitted'; }
